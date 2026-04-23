@@ -25,7 +25,8 @@ public class Main {
                     System.out.println("Animal added successfully.");
                     break;
                 case 2:
-                    System.out.println("Removing an animal");
+                    String removeId =  removeAnimalInput();
+                    FileHandler.removeById(removeId);
                     break;
                 case 3:
                     System.out.println("Searching for an animal");
@@ -87,4 +88,13 @@ public class Main {
                 breed, colour, birthday,
                 vaccineStatus, identification, adopted);
     }
+
+    static String removeAnimalInput(){
+        scanner.nextLine(); // clear leftover newline
+
+        System.out.print("ID: ");
+        String id = scanner.nextLine();
+
+        return  id;
+    };
 }

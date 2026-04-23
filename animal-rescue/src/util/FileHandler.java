@@ -63,13 +63,25 @@ public class FileHandler {
     }
 
     public static void removeById(String id){
-        try(
-                BufferedReader br = new BufferedReader(new FileReader(FILE_PATH));
-                PrintWriter pw = new PrintWriter(new FileWriter(FILE_PATH))
-        ){
-            List<Animal> loadedAnimals =   FileHandler.loadAnimals();
-        }catch (IOException e) {
-            System.out.println("Error saving file: " + e.getMessage());
+        List<Animal> loadedAnimals =   FileHandler.loadAnimals();
+
+        boolean found = false;
+        List<Animal> updated = new ArrayList<>();
+
+        for (Animal a : loadedAnimals) {
+            if (a.getId().equals(id)) {
+                found = true; // skip this one — it's the one to remove
+            } else {
+                updated.add(a); // keep everyone else
+            }
         }
+
+        if (!found) {
+            System.out.println("No animal found with ID: " + id);
+            return;
+        }
+
+        saveAnimals(updated); // write the filtered list back
+        System.out.println("Animal removed successfully.");
     }
 }

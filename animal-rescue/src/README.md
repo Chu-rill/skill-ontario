@@ -38,4 +38,4 @@ docker run -it animal-rescue
     └── util
 ```
 ### Add an Animal
-![Add Animal](screenshots/image1.png)
+![Add Animal](screenshots/initial.png)

@@ -27,10 +27,15 @@ docker run -it animal-rescue
 ```
 ├── animal-rescue.iml
 └── src
+    ├── Dockerfile
     ├── Main.java
     ├── README.md
     ├── data
     ├── model
+    ├── pom.xml
+    ├── screenshots
     ├── service
     └── util
 ```
+### Add an Animal
+![Add Animal](screenshots/image1.png)

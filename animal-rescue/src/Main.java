@@ -29,7 +29,11 @@ public class Main {
                     FileHandler.removeById(removeId);
                     break;
                 case 3:
-                    System.out.println("Searching for an animal");
+                    String keyword = searchAnimal();
+                    List<Animal> Animals = FileHandler.search(keyword);
+                    for (Animal a : Animals){
+                        System.out.println(a);
+                    }
                     break;
                 case 4:
                     System.out.println("Displaying all animal");
@@ -93,8 +97,16 @@ public class Main {
         scanner.nextLine(); // clear leftover newline
 
         System.out.print("ID: ");
-        String id = scanner.nextLine();
 
-        return  id;
+        return scanner.nextLine();
+    };
+
+
+    static String searchAnimal(){
+        scanner.nextLine(); // clear leftover newline
+
+        System.out.print("Search by Name or Specie: ");
+
+        return scanner.nextLine();
     };
 }

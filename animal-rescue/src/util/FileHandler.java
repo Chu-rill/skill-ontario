@@ -49,9 +49,10 @@ public class FileHandler {
 
     public static void appendAnimal(Animal a) {
         try (PrintWriter pw = new PrintWriter(new FileWriter(FILE_PATH, true))) { // true = append mode
-            String uniqueID = UUID.randomUUID().toString();
+//            String uniqueID = UUID.randomUUID().toString();
+            String genId = generateNextId();
             pw.println(String.join(",",
-                    uniqueID, a.getSpecies(), a.getName(),
+                    genId, a.getSpecies(), a.getName(),
                     a.getGender(), String.valueOf(a.isSpayed()),
                     a.getBreed(), a.getColour(), a.getBirthday(),
                     a.getVaccineStatus(), a.getIdentification(),
@@ -83,5 +84,29 @@ public class FileHandler {
 
         saveAnimals(updated); // write the filtered list back
         System.out.println("Animal removed successfully.");
+    }
+
+    public static List<Animal> search(String keyword){
+        List<Animal> loadedAnimals =   FileHandler.loadAnimals();
+//        List<Animal> found = new ArrayList<>();
+//
+//        for (Animal a : loadedAnimals) {
+//            if (a.getName().equalsIgnoreCase(keyword)
+//                    || a.getSpecies().equalsIgnoreCase(keyword)) {
+//                found.add(a);
+//            }
+//        }
+//        return found;
+
+        return loadedAnimals.stream()
+                .filter(a -> a.getName().equalsIgnoreCase(keyword)
+                        || a.getSpecies().equalsIgnoreCase(keyword))
+                .toList();
+    }
+
+    public static String generateNextId() {
+        List<Animal> animals = loadAnimals();
+        int next = animals.size() + 1;
+        return String.format("%08d", next); // pads to 8 digits → 00000001
     }
 }

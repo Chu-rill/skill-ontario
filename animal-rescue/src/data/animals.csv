@@ -1,1 +1,10 @@
-a9850500-7e04-4c32-8356-bda2ad9187ff,Dog,Roger,Male,true,German sheepard,Brown,2025-11-11,yes,chip,false
+00000001,Dog,Roger,M,Yes,German Shepherd,Brown,2020-03-15,Up to date,Microchip-985141000123456,No
+00000002,Cat,Luna,F,Yes,Siamese,White,2019-07-22,Up to date,Barcode-BC1042837,No
+00000003,Dog,Max,M,No,Beagle,Tan,2021-01-10,Late,Microchip-985112003456789,No
+00000004,Cat,Mittens,F,Yes,Calico,Tabby,2018-11-05,Up to date,Microchip-985141000987654,Yes
+00000005,Bird,Kiwi,F,No,Parakeet,Green,2022-04-18,Unknown,Barcode-BC2039847,No
+00000006,Rabbit,Snowball,M,Yes,Lionhead,White,2021-09-30,Up to date,Microchip-985112009871234,No
+00000007,Dog,Bella,F,Yes,Collie,Brown,2017-06-14,Late,Barcode-BC3047291,Yes
+00000008,Cat,Shadow,M,No,Unknown,Black,2020-12-01,Unknown,None,No
+00000009,Small & Furry,Peanut,M,No,Hamster,Golden,2023-02-28,Unknown,None,No
+00000010,Barnyard,Clover,F,No,Goat,White,2019-05-17,Up to date,Barcode-BC4018273,No

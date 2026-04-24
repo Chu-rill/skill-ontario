@@ -37,5 +37,5 @@ docker run -it animal-rescue
     ├── service
     └── util
 ```
-### Add an Animal
-![Add Animal](screenshots/initial.png)
+### Menu
+![Menu](screenshots/initial.png)

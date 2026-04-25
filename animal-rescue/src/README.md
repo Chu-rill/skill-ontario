@@ -39,3 +39,9 @@ docker run -it animal-rescue
 ```
 ### Menu
 ![Menu](screenshots/initial.png)
+
+### Add Animal
+![Add Animal](screenshots/add_animal.png)
+
+### Display All
+![Display All](screenshots/display_all.png)

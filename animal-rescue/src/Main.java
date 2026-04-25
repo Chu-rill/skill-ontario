@@ -14,7 +14,8 @@ public class Main {
             System.out.println("2. Remove Animal");
             System.out.println("3. Search");
             System.out.println("4. Display All");
-            System.out.println("5. Exit");
+            System.out.println("5. Update Animal");
+            System.out.println("6. Exit");
 
             int choice = scanner.nextInt();
 
@@ -47,6 +48,11 @@ public class Main {
                     }
                     break;
                 case 5:
+
+                    String updateId = updateAnimalInput();
+                    FileHandler.updateAnimal(updateId);
+                    break;
+                case 6:
                     return;
             }
         }
@@ -97,6 +103,14 @@ public class Main {
         scanner.nextLine(); // clear leftover newline
 
         System.out.print("ID: ");
+
+        return scanner.nextLine();
+    };
+
+    static String updateAnimalInput(){
+        scanner.nextLine(); // clear leftover newline
+
+        System.out.print("Enter ID to update: ");
 
         return scanner.nextLine();
     };

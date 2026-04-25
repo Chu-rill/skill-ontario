@@ -5,10 +5,12 @@ import model.Animal;
 import java.io.*;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Scanner;
 import java.util.UUID;
 
 public class FileHandler {
     private static final String FILE_PATH = "src/data/animals.csv";
+    static Scanner scanner = new Scanner(System.in);
 
     public static List<Animal> loadAnimals() {
         List<Animal> animals = new ArrayList<>();
@@ -102,6 +104,86 @@ public class FileHandler {
                 .filter(a -> a.getName().equalsIgnoreCase(keyword)
                         || a.getSpecies().equalsIgnoreCase(keyword))
                 .toList();
+    }
+
+    public static void updateAnimal(String id) {
+        List<Animal> animals = loadAnimals();
+        boolean found = false;
+
+        for (Animal a : animals) {
+            if (a.getId().equals(id)) {
+                found = true;
+
+                System.out.println("What would you like to update?");
+                System.out.println("1. Name");
+                System.out.println("2. Species");
+                System.out.println("3. Gender");
+                System.out.println("4. Spayed");
+                System.out.println("5. Breed");
+                System.out.println("6. Colour");
+                System.out.println("7. Birthday");
+                System.out.println("8. Vaccine Status");
+                System.out.println("9. Identification");
+                System.out.println("10. Adopted");
+
+                int choice = scanner.nextInt();
+                scanner.nextLine(); // clear newline
+
+                switch (choice) {
+                    case 1:
+                        System.out.print("New Name: ");
+                        a.setName(scanner.nextLine());
+                        break;
+                    case 2:
+                        System.out.print("New Species (Dog/Cat/Bird/Rabbit/Small & Furry/Fish/Barnyard/Other): ");
+                        a.setSpecies(scanner.nextLine());
+                        break;
+                    case 3:
+                        System.out.print("New Gender (M/F): ");
+                        a.setGender(scanner.nextLine());
+                        break;
+                    case 4:
+                        System.out.print("Spayed (true/false): ");
+                        a.setSpayed(Boolean.parseBoolean(scanner.nextLine()));
+                        break;
+                    case 5:
+                        System.out.print("New Breed: ");
+                        a.setBreed(scanner.nextLine());
+                        break;
+                    case 6:
+                        System.out.print("New Colour: ");
+                        a.setColour(scanner.nextLine());
+                        break;
+                    case 7:
+                        System.out.print("New Birthday (YYYY-MM-DD): ");
+                        a.setBirthday(scanner.nextLine());
+                        break;
+                    case 8:
+                        System.out.print("New Vaccine Status (Up to date/Late/Unknown): ");
+                        a.setVaccineStatus(scanner.nextLine());
+                        break;
+                    case 9:
+                        System.out.print("New Identification (Barcode-XXXXX / Microchip-XXXXX / None): ");
+                        a.setIdentification(scanner.nextLine());
+                        break;
+                    case 10:
+                        System.out.print("Adopted (true/false): ");
+                        a.setAdopted(Boolean.parseBoolean(scanner.nextLine()));
+                        break;
+                    default:
+                        System.out.println("Invalid choice.");
+                }
+                break;
+            }
+        }
+
+        if (!found) {
+            System.out.println("No animal found with ID: " + id);
+            return;
+        }
+
+        saveAnimals(animals);
+        System.out.println("Animal updated successfully.");
     }
 
     public static String generateNextId() {

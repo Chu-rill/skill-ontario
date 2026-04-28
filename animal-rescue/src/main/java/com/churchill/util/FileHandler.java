@@ -1,6 +1,6 @@
-package util;
+package main.java.util;
 
-import model.Animal;
+import main.java.model.Animal;
 
 import java.io.*;
 import java.util.ArrayList;
@@ -9,7 +9,7 @@ import java.util.Scanner;
 import java.util.UUID;
 
 public class FileHandler {
-    private static final String FILE_PATH = "src/data/animals.csv";
+    private static final String FILE_PATH = "data/animals.csv";
     static Scanner scanner = new Scanner(System.in);
 
     public static List<Animal> loadAnimals() {

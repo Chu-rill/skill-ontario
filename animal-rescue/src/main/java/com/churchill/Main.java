@@ -1,5 +1,7 @@
-import model.Animal;
-import util.FileHandler;
+package com.churchill;
+
+import main.java.model.Animal;
+import main.java.util.FileHandler;
 
 import java.util.List;
 import java.util.Scanner;

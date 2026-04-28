@@ -1,11 +1,11 @@
 # Use a lightweight Java image
-FROM openjdk:17-jdk-slim
+FROM eclipse-temurin:17-jdk-jammy
 
 # Set working directory
 WORKDIR /app
 
 # Copy project files
-COPY target/animal-rescue.jar app.jar
+COPY target/animal-rescue-jar-with-dependencies.jar app.jar
 COPY data ./data
 
 # Run the app

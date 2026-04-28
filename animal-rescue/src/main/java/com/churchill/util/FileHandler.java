@@ -1,6 +1,6 @@
-package main.java.util;
+package com.churchill.util;
 
-import main.java.model.Animal;
+import com.churchill.model.Animal;
 
 import java.io.*;
 import java.util.ArrayList;

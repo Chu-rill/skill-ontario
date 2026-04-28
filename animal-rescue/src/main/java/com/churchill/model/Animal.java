@@ -1,4 +1,4 @@
-package main.java.model;
+package com.churchill.model;
 
 public class Animal {
     private String id;

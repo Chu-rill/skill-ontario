@@ -1,14 +1,14 @@
 package com.churchill;
 
-import main.java.model.Animal;
-import main.java.util.FileHandler;
+import com.churchill.model.Animal;
+import com.churchill.util.FileHandler;
 
 import java.util.List;
 import java.util.Scanner;
 
 public class Main {
    static Scanner scanner = new Scanner(System.in);
-    public static void main() {
+    public static void main(String[] args) {
 
         while (true) {
             System.out.println("Select a task to perform");

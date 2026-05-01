@@ -1,17 +1,31 @@
 package com.churchill;
 
+import java.util.Scanner;
+
 //TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
 // click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
 public class Main {
-    static void main() {
-        //TIP Press <shortcut actionId="ShowIntentionActions"/> with your caret at the highlighted text
-        // to see how IntelliJ IDEA suggests fixing it.
-        IO.println(String.format("Hello and welcome!"));
+    static Scanner scanner = new Scanner(System.in);
+   public static void main(String[] args){
+       while (true){
+           System.out.println("Select a task to perform");
+           System.out.println("\n1. Add Animal");
+           System.out.println("2. Remove Animal");
+           System.out.println("3. Search");
+           System.out.println("4. Display All");
+           System.out.println("5. Update Animal");
+           System.out.println("6. Exit");
 
-        for (int i = 1; i <= 5; i++) {
-            //TIP Press <shortcut actionId="Debug"/> to start debugging your code. We have set one <icon src="AllIcons.Debugger.Db_set_breakpoint"/> breakpoint
-            // for you, but you can always add more by pressing <shortcut actionId="ToggleLineBreakpoint"/>.
-            IO.println("i = " + i);
-        }
-    }
+           int choice = scanner.nextInt();
+
+           switch (choice){
+               case 1:
+                   System.out.println("Number 1");
+                   break;
+               case 2:
+                   System.out.println("NUmber 2");
+                   break;
+           }
+       }
+   }
 }

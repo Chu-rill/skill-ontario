@@ -11,19 +11,19 @@ A Java-based CLI application to manage animals in a shelter.
 
 ## How to Run
 
-### Using Maven
+– Using Maven
 ```bash
 mvn clean package
 java -jar target/animal-rescue-jar-with-dependencies.jar
 ```
 
-### Using Docker
+– Using Docker
 ```bash
 docker build -t animal-rescue-jar-with-dependencies .
 docker run -it animal-rescue-jar-with-dependencies
 ```
 
-### Using a Shell Script
+– Using a Shell Script
 ```bash
  bash run.sh
 ```
